@@ -15,7 +15,7 @@ if you want to replicat the results, download the repo and run the script as fol
 
 
 ```cd IFT6756-BayesianGAN/src/
-```python bgan.py dataset prior optimizer bool
+python bgan.py dataset prior optimizer bool```
 
 - dataset = {mnist, celeba}
 - prior = {normal, uniform, cauchy, laplace}
