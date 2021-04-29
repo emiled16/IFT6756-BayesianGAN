@@ -81,6 +81,14 @@ def to_cuda(elements):
     return elements
 
 
+def adapt_mnist(imgs):
+    if DATASET == 'mnist':
+        imgs = up_mnist(imgs)
+        imgs = imgs.repeat(1, 3, 1, 1)
+        return imgs
+    return imgs
+
+
 class PartialInceptionNetwork(nn.Module):
 
     def __init__(self, transform_input=True):
@@ -260,6 +268,8 @@ def eval_discriminator():
     for i in range(Jg*M):
         imgs.append(next(iter(testloader))[0])
     img = torch.cat(imgs)
+    img = adapt_mnist(img)
+    print(img.shape)
     true_label = Variable(Tensor(batch_size*Jg*M, 1).fill_(1.0), requires_grad=False)
 
     preds = []
@@ -297,7 +307,7 @@ def eval():
     if DATASET == 'mnist':
         real_img = img.repeat(1, 3, 1, 1)
         real_img = up(real_img)
-        # FAKE_img = fake_img.repeat(1, 3, 1, 1)
+        #FAKE_img = fake_img.repeat(1, 3, 1, 1)
         FAKE_img = up(fake_img)
     else:
         FAKE_img = up(fake_img)
@@ -309,12 +319,7 @@ def eval():
     return IS_mu, IS_std, FID
 
 
-def adapt_mnist(imgs):
-    if DATASET == 'mnist':
-        imgs = up_mnist(imgs)
-        imgs = imgs.repeat(1, 3, 1, 1)
-        return imgs
-    return imgs
+
 
 
 nc = 3
