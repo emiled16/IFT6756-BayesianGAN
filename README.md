@@ -11,11 +11,12 @@ Pytorch implementation of the [Bayesian GAN](https://arxiv.org/abs/1705.09558) p
 - Scipy
 
 ## Run
-if you want to replicat the results, download the repo and run the script as follow:
+To replicate the results, download the repo and run the script as follow:
 
 
 ```cd IFT6756-BayesianGAN/src/
-```python bgan.py dataset prior optimizer bool
+python bgan.py dataset prior optimizer bool
+```
 
 
 - dataset = {mnist, celeba}
@@ -23,6 +24,8 @@ if you want to replicat the results, download the repo and run the script as fol
 - optimizer = {adam, SGLD, pSGLD, SGHMC}
 - bool = {0, 1}. Set bool to 0 if you want to run a standard DCGAN
 
-The code in this repo is based on the following repos/links:
+The code in this repo is based on the following repos:
 
-- 
+- [DCGAN TUTORIAL](https://github.com/pytorch/tutorials/blob/master/beginner_source/dcgan_faces_tutorial.py)
+- [Bayesian GAN](https://arxiv.org/abs/1705.09558)
+- [Bayesian GAN](https://arxiv.org/abs/1705.09558)
