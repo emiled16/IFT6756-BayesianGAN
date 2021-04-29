@@ -297,7 +297,7 @@ def eval():
     if DATASET == 'mnist':
         real_img = img.repeat(1, 3, 1, 1)
         real_img = up(real_img)
-        FAKE_img = fake_img.repeat(1, 3, 1, 1)
+        # FAKE_img = fake_img.repeat(1, 3, 1, 1)
         FAKE_img = up(FAKE_img)
     else:
         FAKE_img = up(fake_img)
