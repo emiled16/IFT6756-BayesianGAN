@@ -11,10 +11,11 @@ Pytorch implementation of the [Bayesian GAN](https://arxiv.org/abs/1705.09558) p
 - Scipy
 
 ## Run
-To replicate the results, download the repo and run the script as follow:
+To replicate the results, download the repo and run the script as follows:
 
 
-```cd IFT6756-BayesianGAN/src/
+```
+cd IFT6756-BayesianGAN/src/
 python bgan.py dataset prior optimizer bool
 ```
 
